@@ -4,7 +4,7 @@ pipeline {
          label "linux && nodejs"
      }
     }
-    triggers: {
+    triggers {
         pollSCM('* * * * *')
     }
     stages {

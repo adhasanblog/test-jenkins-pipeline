@@ -4,16 +4,23 @@ pipeline {
          label "linux && nodejs"
      }
     }
+    triggers: {
+        pollSCM('* * * * *')
+    }
     stages {
         stage("Install Dependencies") {
             steps {
+                echo "Installing dependencies..."
                 sh "npm install"
+                echo "Dependencies installed"
             }
         }
 
         stage("Build") {
             steps {
+                echo "Building the project..."
                 sh "npm run build"
+                echo "Project built"
             }
         }
     }

@@ -23,6 +23,14 @@ pipeline {
                 echo "Project built"
             }
         }
+
+        stage("Preview Build") {
+            steps {
+                echo "Previewing the build..."
+                sh "npm run preview"
+                echo "Build previewed"
+            }
+        }
     }
 
     post {

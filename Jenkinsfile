@@ -29,6 +29,9 @@ pipeline {
                 echo "Previewing the build..."
                 sh "npm run preview"
                 echo "Build previewed"
+                sleep 180
+                echo "Stopping the preview..."
+                sh "npm run stop"
             }
         }
     }

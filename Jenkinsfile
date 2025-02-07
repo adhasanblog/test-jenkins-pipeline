@@ -1,5 +1,9 @@
 pipeline {
-    agent any
+    agent {
+     node {
+         label "linux && nodejs"
+     }
+    }
     stages {
         stage("Hellow"){
             steps {
